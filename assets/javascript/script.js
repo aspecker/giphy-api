@@ -19,8 +19,12 @@ for (var i=0;i<toons.length;i++){
         $("#btnDiv").append(button);
 }
 
+//Hide panels until button is clicked
+$("#gifPanel").hide();
+
 //button on click event
 $(".toonBtn").click(function(){
+    $("#gifPanel").show();
     $("#gifBox").empty();
     // Ajax call using data-name attribute as search term
     var show = $(this).attr("data-name");
@@ -44,7 +48,7 @@ $(".toonBtn").click(function(){
             // gif.attr("data-state","still");
 
             //attach still link to img tag and append
-            gif.attr("src",stillURL);
+            gif.attr("src",moveURL);
             // var lineBreak = $("<div class='lineBreak'");
             $("#gifBox").append(rating,gif);
         }

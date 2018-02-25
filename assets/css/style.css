@@ -1,8 +1,18 @@
 body{
     font-family: 'Nanum Brush Script', cursive;
+    background-color: 		#1A89A7;
+    background-image: url("../images/natural-paper.png");
+    color: #f5f5f5;
+}
+.bgImg {
+    width: 100vw;
+    height: 100vh;
     background-image: url("../images/toon-bg.jpg");
-    /* background-repeat: no-repeat; */
     background-size: cover;
+    background-repeat: none;
+  }
+.btnRow{
+    padding: 5px 15px 20px 15px;
 }
 .toonBtn{
     margin: 5px 5px 5px 5px;
@@ -10,13 +20,24 @@ body{
     color: black;
     font-family: 'Permanent Marker', cursive;
     opacity: 0.9;
+    font-size: 1.2em;
 }
 .panel{
     font-size: 1.5em;
+    background-color:	#35759B;
+    background-image: url("../images/clean-gray-paper.png");
+    font-size: 1.8em;
 }
 .gif{
     margin-bottom: 10px;
 }
 .lineBreak{
-    border: 1px solid black;
+    border: 2px solid black;
 }
+/* #gifPanel{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#formPanel{
+    margin-right: 70px;
+} */
