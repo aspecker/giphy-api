@@ -29,7 +29,10 @@ body{
     font-size: 1.8em;
 }
 .gif{
-    margin-bottom: 10px;
+    max-height: 125px;
+}
+#gifPanel{
+    margin: 0px auto;
 }
 .lineBreak{
     border: 2px solid black;

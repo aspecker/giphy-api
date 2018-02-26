@@ -23,7 +23,8 @@ for (var i=0;i<toons.length;i++){
 $("#gifPanel").hide();
 
 //button on click event
-$(".toonBtn").click(function(){
+$(document).on("click",".toonBtn", function(event){
+    event.preventDefault();
     $("#gifPanel").show();
     $("#gifBox").empty();
     // Ajax call using data-name attribute as search term
@@ -37,24 +38,26 @@ $(".toonBtn").click(function(){
         // Create gif image html and gather rating, still url and moving url from API object
         for (var i=0;i<response.data.length;i++){
             // create gif html element
-            var gif = $("<img>").addClass("gif img-responsive");
+            var gifDiv = $("<div class='col-md-6'>")
+            var gif = $("<img>").addClass("gif img-responsive mx-auto");
             //attach data-* for links and rating
-            var stillURL = response.data[i].images.original_still.url;
-            var moveURL = response.data[i].images.original.url
+            var stillURL = response.data[i].images.fixed_width_still.url;
+            var moveURL = response.data[i].images.fixed_width.url
             var rating =$("<p>").html("<b>GIF rated: "+response.data[i].rating.toUpperCase()+"</b>");
-            $(".gif").data("state","still");
-            $(".gif").data("still",stillURL);
-            $(".gif").data("move",moveURL);
+            $(gif).data("state","still");
+            $(gif).data("still",stillURL);
+            $(gif).data("move",moveURL);
             //attach still link to img tag and append
             gif.attr("src",stillURL);
             // var lineBreak = $("<div class='lineBreak'");
-            $("#gifBox").append(rating,gif);
+            gifDiv.append(rating,gif);
+            $("#gifBox").append(gifDiv);
         }
       });
 });
 
 // image on click pause and resume functionality
-$(".gif").click(function(){
+$(document).on("click",".gif",function(){
     // retrieve information from data states
     var state = $(this).data("state");
     var stillURL = $(this).data("still");
@@ -71,7 +74,7 @@ $(".gif").click(function(){
 });
 
 //Form function
-$("#submitBtn").click(function(){
+$(document).on("click","#submitBtn",function(event){
     event.preventDefault();
     var toonSearch = $("#search").val();
     var button = $("<button>").addClass("toonBtn btn");

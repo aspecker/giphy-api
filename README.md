@@ -2,14 +2,12 @@
 ## Adam Specker
 
 ## TO-DOs
-* when images populate, page grows causing background image to distort in size
-* alter search algorithm so that a new selection of gifs is returned each time, using random not search
 * major formatting is needed so that the gif loadout is standardized
-* improve usage of giphy api to generate more relevant gifs (no unrelated gifs)
-* buttons added from form do not properly make api call
-
 
 ## DONES
+* (making repeated ajax calls led to too long load times) alter search algorithm so that a new selection of gifs is returned each time, using random not search
+* buttons added from form do not properly make api call
+* when images populate, page grows causing background image to distort in size
 
 ### Pseudocode
 * Build array of strings which will be gif keywords
