@@ -5,6 +5,9 @@
 * when images populate, page grows causing background image to distort in size
 * alter search algorithm so that a new selection of gifs is returned each time, using random not search
 * major formatting is needed so that the gif loadout is standardized
+* improve usage of giphy api to generate more relevant gifs (no unrelated gifs)
+* buttons added from form do not properly make api call
+
 
 ## DONES
 
