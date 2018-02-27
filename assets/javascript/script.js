@@ -29,7 +29,7 @@ $(document).on("click",".toonBtn", function(event){
     $("#gifBox").empty();
     // Ajax call using data-name attribute as search term
     var show = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key="+apiKey+"&limit=10"+"&q="+show;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key="+apiKey+"&limit=12"+"&q="+show;
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -38,8 +38,8 @@ $(document).on("click",".toonBtn", function(event){
         // Create gif image html and gather rating, still url and moving url from API object
         for (var i=0;i<response.data.length;i++){
             // create gif html element
-            var gifDiv = $("<div class='col-md-6'>")
-            var gif = $("<img>").addClass("gif img-responsive mx-auto");
+            var gifDiv = $("<div class='col-md-4 col-s-6'>")
+            var gif = $("<img>").addClass("gif ");
             //attach data-* for links and rating
             var stillURL = response.data[i].images.fixed_width_still.url;
             var moveURL = response.data[i].images.fixed_width.url
@@ -47,10 +47,11 @@ $(document).on("click",".toonBtn", function(event){
             $(gif).data("state","still");
             $(gif).data("still",stillURL);
             $(gif).data("move",moveURL);
+
             //attach still link to img tag and append
             gif.attr("src",stillURL);
-            // var lineBreak = $("<div class='lineBreak'");
             gifDiv.append(rating,gif);
+            gifDiv.append("<div class='lineBreak'");
             $("#gifBox").append(gifDiv);
         }
       });
@@ -74,7 +75,7 @@ $(document).on("click",".gif",function(){
 });
 
 //Form function
-$(document).on("click","#submitBtn",function(event){
+$(document).on("click","#formSubmit",function(event){
     event.preventDefault();
     var toonSearch = $("#search").val();
     var button = $("<button>").addClass("toonBtn btn");
@@ -82,3 +83,4 @@ $(document).on("click","#submitBtn",function(event){
     button.text(toonSearch);
     $("#btnDiv").append(button); 
 });
+
