@@ -1,6 +1,12 @@
 # Gif generator using giphy api
 ## Adam Specker
 
+## FUTURE DIRECTION
+* project could gain from more interactivity from the user
+    * ideas are some kind of guessing game for which gif is currently trending
+    * or guess what the tag is on the trending gif
+* increasing pool of gifs or randomizing gifs could deepend user experience
+
 ## TO-DOs
 * major formatting is needed so that the gif loadout is standardized
 
