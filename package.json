@@ -1,0 +1,27 @@
+{
+  "name": "giphy-api",
+  "version": "1.0.0",
+  "description": "Cartoon gif generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aspecker/giphy-api.git"
+  },
+  "keywords": [
+    "gif",
+    "cartoon"
+  ],
+  "author": "Adam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aspecker/giphy-api/issues"
+  },
+  "homepage": "https://github.com/aspecker/giphy-api#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
